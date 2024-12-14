@@ -77,6 +77,10 @@ class S3Fdw(ForeignDataWrapper):
         self.aws_access_key = fdw_options['aws_access_key']
         self.aws_secret_key = fdw_options['aws_secret_key']
 
+        # Add hostname support for custom endpoint
+        self.hostname = fdw_options.get('hostname')
+        self.endpoint_url = f'https://{self.hostname}' if self.hostname else None
+
         self.delimiter = fdw_options.get("delimiter", ",")
         self.quotechar = fdw_options.get("quotechar", 
                                          fdw_options.get("quote", '"'))
@@ -89,6 +93,7 @@ class S3Fdw(ForeignDataWrapper):
             's3',
             aws_access_key_id=self.aws_access_key,
             aws_secret_access_key=self.aws_secret_key
+            endpoint_url=self.endpoint_url  # Custom endpoint support
         )
 
         stream = BytesIO()
