@@ -92,7 +92,7 @@ class S3Fdw(ForeignDataWrapper):
         s3 = boto3.client(
             's3',
             aws_access_key_id=self.aws_access_key,
-            aws_secret_access_key=self.aws_secret_key
+            aws_secret_access_key=self.aws_secret_key,
             endpoint_url=self.endpoint_url  # Custom endpoint support
         )
 
