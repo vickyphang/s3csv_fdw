@@ -9,9 +9,9 @@ def read(fname):
 
 setup(
     name='S3Fdw',
-    version='0.3.0',
-    author='Alexander Goldstein',
-    author_email='alexg@eligoenergy.com',
+    version='0.1.0',
+    author='Vicky Phang',
+    author_email='vickyphang11@gmail.com',
     packages=['s3fdw'],
     url='https://github.com/vickyphang/s3csv_fdw',
     license='LICENSE.txt',
