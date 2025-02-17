@@ -28,7 +28,7 @@ make && sudo make install
 The following commands will clone the repository and install it (the last command might require `sudo`):
 
 ```bash
-git clone git@github.com:eligoenergy/s3csv_fdw.git
+git clone git@github.com:vickyphang/s3csv_fdw.git
 cd s3csv_fdw
 python setup.py install
 ```
